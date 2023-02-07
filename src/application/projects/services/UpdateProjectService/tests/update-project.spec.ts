@@ -14,14 +14,13 @@ describe('UpdateProjectService', () => {
 		date = new Date()
 	})
 
-	it('should show all projects', async () => {
+	it('should update the project data', async () => {
 
 		const expectedResult = {
 			id,
 			name: 'test-project-updated',
 			description: 'test-description-updated',
 			url: 'test-url',
-			image: 'test-image',
 			tags: ['test-tag'],
 			created_at: date,
 			updated_at: date
@@ -39,7 +38,6 @@ describe('UpdateProjectService', () => {
 			name: 'test-project-updated',
 			description: 'test-description-updated',
 			url: 'test-url',
-			image: 'test-image',
 			tags: ['test-tag'],
 
 		}

@@ -5,13 +5,11 @@ describe('CreateProjectService', () => {
 
 	let service: CreateProjectService
 	let id: string
-	let tagId: string
 	let date: Date
 
 	beforeEach(() => {
 		service = new CreateProjectService()
 		id = uuid()
-		tagId = uuid()
 		date = new Date()
 	})
 
@@ -21,7 +19,6 @@ describe('CreateProjectService', () => {
 			name: 'test-project',
 			description: 'test-description',
 			url: 'test-url',
-			image: 'test-image.jpg',
 			tags: ['test-tag'],
 			created_at: date,
 			updated_at: date
@@ -38,7 +35,6 @@ describe('CreateProjectService', () => {
 			name: 'test-project',
 			description: 'test-description',
 			url: 'test-url',
-			image: 'test-image.jpg',
 			tags: ['test-tag']
 
 		}

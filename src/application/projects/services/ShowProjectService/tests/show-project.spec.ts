@@ -14,7 +14,7 @@ describe('ShowProjectService', () => {
 		date = new Date()
 	})
 
-	it('should show all projects', async () => {
+	it('should show the project with the informed id', async () => {
 
 		const expectedResult = {
 			id,

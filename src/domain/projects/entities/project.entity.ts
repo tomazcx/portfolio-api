@@ -1,11 +1,12 @@
 import {ObjectId} from "mongoose"
 
 export class Project extends Document {
+	_id: string
 	name: string
 	description: string
 	url: string
 	image: string
 	tags: ObjectId[]
-	created_at: Date
-	updated_at: Date
+	createdAt: Date
+	updatedAt: Date
 }

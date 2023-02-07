@@ -46,6 +46,13 @@ export class ProjectsRepository implements AbstractProjectsRepository {
 		return project
 	}
 
+	public async updateImage(id: string, filename: string): Promise<Project> {
+		await this.projectsModel.updateOne({_id: id}, {$set: {image: filename}})
+		const project = await this.projectsModel.findById(id)
+		return project
+
+	}
+
 	public async delete(id: string): Promise<void> {
 		await this.projectsModel.deleteOne({_id: id})
 		return

@@ -9,5 +9,6 @@ export abstract class AbstractProjectsRepository {
 	abstract findOne(id: string): Promise<Project>
 	abstract create(createProjectDto: CreateProjectDto): Promise<Project>
 	abstract update(id: string, updateProjectDto: UpdateProjectDto): Promise<Project>
+	abstract updateImage(id: string, filename: string): Promise<Project>
 	abstract delete(id: string): Promise<void>
 }
