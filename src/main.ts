@@ -23,6 +23,7 @@ async function bootstrap() {
 		.setVersion('1.0')
 		.addTag('Projects')
 		.addTag('Auth')
+		.addTag('Email')
 		.build()
 
 	const document = SwaggerModule.createDocument(app, config)

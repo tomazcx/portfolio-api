@@ -5,11 +5,14 @@ import {ProjectsModule} from './application/projects/modules/projects.module';
 import {AuthModule} from './application/auth/modules/auth.module';
 import {join} from 'path';
 import {ServeStaticModule} from '@nestjs/serve-static';
+import {EmailModule} from './application/email/modules/email.module';
 
 @Module({
 	imports: [MongooseModule.forRoot(process.env.MONGO_URL), ProjectsModule, AuthModule, ServeStaticModule.forRoot({
 		rootPath: join(__dirname, '..', 'upload')
-	})],
+	}),
+		EmailModule
+	],
 
 })
 export class AppModule {
