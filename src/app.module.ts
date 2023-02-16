@@ -11,16 +11,15 @@ import {EmailModule} from './application/email/modules/email.module';
 	imports: [MongooseModule.forRoot(process.env.MONGO_URL), ProjectsModule, AuthModule, ServeStaticModule.forRoot({
 		rootPath: join(__dirname, '..', 'upload')
 	}),
-		EmailModule
+		EmailModule,
 	],
-
 })
 export class AppModule {
 	configure(consumer: MiddlewareConsumer) {
 		consumer
 			.apply(VerifyIdMiddleware)
 			.exclude({
-				path: 'projects/all', method: RequestMethod.GET
+				path: '/projects/all', method: RequestMethod.GET
 			})
 			.forRoutes('projects/:id')
 
