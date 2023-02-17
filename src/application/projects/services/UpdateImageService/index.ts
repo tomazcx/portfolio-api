@@ -3,8 +3,7 @@ import {NotFoundError} from "src/application/common/errors/types/NotFoundError";
 import {Project} from "src/domain/projects/entities/project.entity";
 import {AbstractUpdateImageService} from "src/domain/projects/services/abstract-update-image.service";
 import {ProjectsRepository} from "src/infra/db/repositories/projects.repository";
-import * as fs from 'fs'
-import * as path from "path";
+import {deleteImage} from "../../utils/delete-image.util";
 
 @Injectable()
 export class UpdateImageService implements AbstractUpdateImageService {
@@ -20,9 +19,7 @@ export class UpdateImageService implements AbstractUpdateImageService {
 		}
 
 		if (project.image) {
-			fs.unlink(path.resolve(__dirname, '../', '../', '../', '../', '../upload', project.image), (err) => {
-				console.log(err)
-			})
+			deleteImage(project.image)
 		}
 
 		const updatedProject = await this.projectsRepository.updateImage(id, fileName)

@@ -1,5 +1,6 @@
 import {Body, Controller, HttpCode, HttpStatus, Post} from '@nestjs/common';
 import {ApiTags} from '@nestjs/swagger';
+import {Throttle} from '@nestjs/throttler';
 import {SendEmailDto} from '../dto/send-email.dto';
 import {SendEmailService} from '../services/SendEmailService';
 
@@ -11,6 +12,7 @@ export class EmailController {
 		private readonly sendEmailService: SendEmailService
 	) {}
 
+	@Throttle(1, 20)
 	@Post()
 	@HttpCode(HttpStatus.NO_CONTENT)
 	async sendEmail(@Body() sendEmailDto: SendEmailDto) {

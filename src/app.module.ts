@@ -1,17 +1,23 @@
 import {MiddlewareConsumer, Module, RequestMethod} from '@nestjs/common';
 import {MongooseModule} from '@nestjs/mongoose';
 import {VerifyIdMiddleware} from './application/common/middlewares/verify-id.middleware';
-import {ProjectsModule} from './application/projects/modules/projects.module';
 import {AuthModule} from './application/auth/modules/auth.module';
 import {join} from 'path';
 import {ServeStaticModule} from '@nestjs/serve-static';
 import {EmailModule} from './application/email/modules/email.module';
+import {ProjectsControllersModule} from './application/projects/modules/projects-controllers.module';
+import {ThrottlerModule} from '@nestjs/throttler';
 
 @Module({
-	imports: [MongooseModule.forRoot(process.env.MONGO_URL), ProjectsModule, AuthModule, ServeStaticModule.forRoot({
+	imports: [MongooseModule.forRoot(process.env.MONGO_URL), AuthModule, ServeStaticModule.forRoot({
 		rootPath: join(__dirname, '..', 'upload')
 	}),
 		EmailModule,
+		ProjectsControllersModule,
+	ThrottlerModule.forRoot({
+		ttl: 60,
+		limit: 10
+	})
 	],
 })
 export class AppModule {
@@ -19,7 +25,7 @@ export class AppModule {
 		consumer
 			.apply(VerifyIdMiddleware)
 			.exclude({
-				path: '/projects/all', method: RequestMethod.GET
+				path: '/projects/all/:tag', method: RequestMethod.GET
 			})
 			.forRoutes('projects/:id')
 
