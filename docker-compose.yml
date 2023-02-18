@@ -7,7 +7,6 @@ services:
     entrypoint: .docker/entrypoint.sh
     ports:
       - "3000:3000"
-    command: yarn start:dev
     volumes: 
       - .:/home/node/app
     depends_on:

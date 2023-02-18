@@ -2,4 +2,4 @@
 
 yarn
 yarn build
-yarn start:dev
+yarn start:prod

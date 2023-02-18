@@ -9,7 +9,7 @@ WORKDIR /home/node/app
 
 EXPOSE 3000
 
-RUN ["chmod", "755", ".docker/entrypoint.sh"]
+CMD ["chmod", "+x", ".docker/entrypoint.sh"]
 
 
 
