@@ -1,15 +1,16 @@
 FROM node:lts-alpine
 
-RUN apk add --no-cache bash
-RUN npm install -g @nestjs/cli
-
-USER node
+RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
 
 WORKDIR /home/node/app
 
-EXPOSE 3000
+COPY package.json yarn.lock ./
 
-CMD ["chmod", "+x", ".docker/entrypoint.sh"]
+RUN yarn
+
+COPY --chown=node:node . .
+
+EXPOSE 3000
 
 
 

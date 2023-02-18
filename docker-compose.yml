@@ -4,11 +4,12 @@ services:
   app:
     build: .
     container_name: portfolioapi-app
-    entrypoint: .docker/entrypoint.sh
+    command: "yarn start:prod"
+    working_dir: /home/node/app
+    expose:
+      - "3000"
     ports:
       - "3000:3000"
-    volumes: 
-      - .:/home/node/app
     depends_on:
       - redis
 
