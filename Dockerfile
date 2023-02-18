@@ -9,7 +9,7 @@ WORKDIR /home/node/app
 
 COPY package.json yarn.lock ./
 
-RUN chown -Rh $user:$user .
+RUN chown -Rh node:node .
 
 RUN yarn
 
