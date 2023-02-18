@@ -19,4 +19,11 @@ jobs:
           REMOTE_USER: ${{secrets.REMOTE_USER}}
           REMOTE_PORT: ${{secrets.REMOTE_PORT}}
           TARGET: ${{secrets.REMOTE_TARGET}}
-
+          USER_LOGIN: ${{secrets.USER_LOGIN}}
+          USER_PASSWORD: ${{secrets.USER_PASSWORD}}
+          JWT_SECRET: ${{secrets.JWT_SECRET}}
+          JWT_EXPIRES_IN: ${{secrets.JWT_EXPIRES_IN}}
+          MONGO_USER: ${{secrets.MONGO_USER}}
+          MONGO_PASSWORD: ${{secrets.MONGO_PASSWORD}}
+          MONGO_URL: ${{secrets.MONGO_URL}}
+          SENDGRID_KEY: ${{secrets.SENDGRID_KEY}}
