@@ -1,5 +1,5 @@
 FROM node:lts-alpine
-RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
+RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app && chown -R node:node /home/node/app/dist
 RUN apk add --no-cache bash
 RUN npm install -g @nestjs/cli
 
