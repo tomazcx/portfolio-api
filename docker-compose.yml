@@ -15,7 +15,7 @@ services:
   redis:
     image: 'bitnami/redis:latest'
     container_name: portfolioapi-redis
-    ports: 
-      - "6380:6379"
+    expose:
+      - "6379"
     environment: 
       - ALLOW_EMPTY_PASSWORD=yes

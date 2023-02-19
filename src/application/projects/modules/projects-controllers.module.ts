@@ -22,7 +22,7 @@ import {ProjectsServicesModule} from './projects-services.module';
 			store: async () => await redisStore({
 				socket: {
 					host: 'redis',
-					port: 6380
+					port: 6379
 
 				}
 			}),
