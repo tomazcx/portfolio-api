@@ -1,8 +1,8 @@
 import {Injectable} from "@nestjs/common";
 import {InjectModel} from "@nestjs/mongoose";
 import {Model} from "mongoose";
-import {CreateProjectDto} from "src/application/projects/dto/create-project.dto";
-import {UpdateProjectDto} from "src/application/projects/dto/update-project.dto";
+import {CreateProjectDto} from "src/data/projects/dto/create-project.dto";
+import {UpdateProjectDto} from "src/data/projects/dto/update-project.dto";
 import {Project} from "src/domain/projects/entities/project.entity";
 import {AbstractProjectsRepository} from "src/domain/projects/repositories/abstract-projects.repository";
 

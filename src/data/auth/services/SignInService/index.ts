@@ -1,8 +1,8 @@
+import {generateJwt} from "src/application/auth/utils/generate-jwt.util";
 import {BadRequestError} from "src/application/common/errors/types/BadRequestError";
 import {AuthResponse} from "src/domain/auth/entities/AuthResponse";
 import {AbstractSignInService} from "src/domain/auth/services/abstract-sign-in.service";
 import {SignInDto} from "../../dto/sign-in.dto";
-import {generateJwt} from "../../utils/generate-jwt.util";
 
 export class SignInService implements AbstractSignInService {
 
