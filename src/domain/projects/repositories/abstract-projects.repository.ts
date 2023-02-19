@@ -1,5 +1,5 @@
-import {CreateProjectDto} from "src/application/projects/dto/create-project.dto";
-import {UpdateProjectDto} from "src/application/projects/dto/update-project.dto";
+import {CreateProjectDto} from "src/data/projects/dto/create-project.dto";
+import {UpdateProjectDto} from "src/data/projects/dto/update-project.dto";
 import {Project} from "../entities/project.entity";
 
 export abstract class AbstractProjectsRepository {
