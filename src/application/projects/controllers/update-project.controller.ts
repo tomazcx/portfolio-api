@@ -1,9 +1,10 @@
 import {Body, CACHE_MANAGER, Controller, HttpCode, HttpStatus, Inject, Param, Put, UseGuards} from '@nestjs/common';
-import {UpdateProjectService} from '../services/UpdateProjectService';
 import {Cache} from 'cache-manager';
 import {AuthGuard} from '@nestjs/passport';
 import {ApiResponse, ApiTags} from '@nestjs/swagger';
-import {UpdateProjectDto} from '../dto/update-project.dto';
+import {UpdateProjectService} from 'src/data/projects/services/UpdateProjectService';
+import {UpdateProjectDto} from 'src/data/projects/dto/update-project.dto';
+
 
 @ApiTags('Projects')
 @Controller('projects')

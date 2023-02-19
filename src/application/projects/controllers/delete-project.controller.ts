@@ -1,9 +1,9 @@
 import {CACHE_MANAGER, Controller, Delete, HttpCode, HttpStatus, Param, UseGuards} from '@nestjs/common';
-import {DeleteProjectService} from '../services/DeleteProjectService';
 import {Cache} from 'cache-manager';
 import {Inject} from '@nestjs/common';
 import {ApiResponse, ApiTags} from '@nestjs/swagger';
 import {AuthGuard} from '@nestjs/passport';
+import {DeleteProjectService} from 'src/data/projects/services/DeleteProjectService';
 
 @ApiTags('Projects')
 @Controller('projects')

@@ -1,8 +1,8 @@
 import {Body, Controller, HttpCode, HttpStatus, Post} from '@nestjs/common';
 import {ApiTags} from '@nestjs/swagger';
 import {Throttle} from '@nestjs/throttler';
-import {SendEmailDto} from '../dto/send-email.dto';
-import {SendEmailService} from '../services/SendEmailService';
+import {SendEmailDto} from 'src/data/email/dto/send-email.dto';
+import {SendEmailService} from 'src/data/email/services/SendEmailService';
 
 @Controller('email')
 @ApiTags('Email')

@@ -1,11 +1,11 @@
 import {CACHE_MANAGER, Controller, HttpCode, HttpStatus, Inject, Param, Patch, UploadedFile, UseGuards, UseInterceptors} from '@nestjs/common';
-import {UpdateImageService} from '../services/UpdateImageService';
 import {Cache} from 'cache-manager';
 import {AuthGuard} from '@nestjs/passport';
 import {ApiResponse, ApiTags} from '@nestjs/swagger';
 import {FileInterceptor} from '@nestjs/platform-express';
 import {diskStorage} from 'multer';
 import * as path from 'path';
+import {UpdateImageService} from 'src/data/projects/services/UpdateImageService';
 
 @ApiTags('Projects')
 @Controller('projects')

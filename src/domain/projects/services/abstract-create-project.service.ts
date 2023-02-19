@@ -1,4 +1,4 @@
-import {CreateProjectDto} from "src/application/projects/dto/create-project.dto";
+import {CreateProjectDto} from "src/data/projects/dto/create-project.dto";
 import {Project} from "../entities/project.entity";
 
 export abstract class AbstractCreateProjectService {

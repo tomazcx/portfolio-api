@@ -26,6 +26,8 @@ async function bootstrap() {
 		.addTag('Email')
 		.build()
 
+	app.enableCors()
+
 	const document = SwaggerModule.createDocument(app, config)
 	SwaggerModule.setup('docs', app, document)
 

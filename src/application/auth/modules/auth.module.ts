@@ -1,8 +1,8 @@
 import {Module} from '@nestjs/common';
 import {JwtModule} from '@nestjs/jwt';
 import {PassportModule} from '@nestjs/passport';
+import {SignInService} from 'src/data/auth/services/SignInService';
 import {AuthController} from '../controllers/auth.controller';
-import {SignInService} from '../services/SignInService';
 import {JwtStrategy} from '../strategies/jwt.strategy';
 
 @Module({

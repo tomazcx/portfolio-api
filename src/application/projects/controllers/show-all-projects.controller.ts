@@ -1,7 +1,7 @@
 import {CACHE_MANAGER, Controller, Get, HttpCode, HttpStatus, Inject} from '@nestjs/common';
-import {ShowAllProjectsService} from '../services/ShowAllProjectsService';
 import {Cache} from 'cache-manager';
 import {ApiTags} from '@nestjs/swagger';
+import {ShowAllProjectsService} from 'src/data/projects/services/ShowAllProjectsService';
 
 @ApiTags('Projects')
 @Controller('projects')
