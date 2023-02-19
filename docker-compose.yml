@@ -3,8 +3,7 @@ version: "3"
 services:
   app:
     build: .
-    container_name: portfolioapi-app
-    command: "yarn start:prod"
+    container_name: portfolioapi-app 
     working_dir: /home/node/app
     expose:
       - "3000"
@@ -16,5 +15,7 @@ services:
   redis:
     image: 'bitnami/redis:latest'
     container_name: portfolioapi-redis
+    ports: 
+      - "6380:6379"
     environment: 
       - ALLOW_EMPTY_PASSWORD=yes
